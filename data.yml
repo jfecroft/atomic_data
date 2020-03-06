@@ -1,0 +1,21 @@
+# atomic mass taken from NIST atomic data handbook
+# https://physics.nist.gov/PhysRefData/Handbook/periodictable.htm
+# mass in amu
+Atoms:
+  K40:
+    mass: 39.963999
+  K41:
+    mass: 40.961825
+  Rb87:
+    mass: 86.909187
+# C6 in K*Ang^-6
+Molecules:
+  KRb:
+    C6: 29812761.687522966 #  0.2072097e8 in cm-2A^6- From
+    #A. Pashov, O. Docenko, M. Tamanis, R. Ferber, H. Knöckel, and E. Tiemann
+    #Phys. Rev. A 76, 022511 – Published 30 August 2007
+    # https://doi.org/10.1103/PhysRevA.76.022511
+  Rb2:
+    C6: 32527460.051647928
+    # 4691(23)(au) from High-precision calculations of van der Waals coefficients
+    # for heteronuclear alkali-metal dimers https://doi.org/10.1103/PhysRevA.63.052704
