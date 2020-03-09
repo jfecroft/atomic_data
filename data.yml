@@ -8,18 +8,70 @@ Atoms:
     mass: 40.961825
   Rb87:
     mass: 86.909187
-# C6 in K*Ang^-6
-# C6 mostely taken from "High-precision calculations of van der Waals coefficients"
+# C6 in au
+# C6 taken from "High-precision calculations of van der Waals coefficients"
 # for heteronuclear alkali-metal dimers https://doi.org/10.1103/PhysRevA.63.052704
+#
+# De in cm^{-1}
+# taken from Reactions of ultracold alkali-metal dimers
+# Piotr S. Żuchowski and Jeremy M. Hutson
+# Phys. Rev. A 81, 060703(R) – Published 15 June 2010
+# DOI:https://doi.org/10.1103/PhysRevA.81.060703
 Molecules:
+  LiLi:
+    C6: 1389
+    De: 8516.768
+  LiNa:
+    C6: 1467
+    De: 7105.5
+  LiK:
+    C6: 2322
+    De: 6216.886
+  LiRb:
+    C6: 2545
+    De: 5946
+  LiCs:
+    C6: 3065
+    De: 5875.542
+  LiFr:
+    C6: 2682
+  NaNa:
+    C6: 1556
+    De: 6022.0286
+  NaK:
+    C6: 2447
+    De: 5273.62
+  NaRb:
+    C6: 2683
+    De: 5030.502
+  NaCs:
+    C6: 3227
+    De: 4954.237
+  NaFr:
+    C6: 2842
+  KK:
+    C6: 3897
+    De: 4450.906
   KRb:
-    C6: 29812761.687522966 #  0.2072097e8 in cm-2A^6- From
-    #A. Pashov, O. Docenko, M. Tamanis, R. Ferber, H. Knöckel, and E. Tiemann
-    #Phys. Rev. A 76, 022511 – Published 30 August 2007
-    # https://doi.org/10.1103/PhysRevA.76.022511
-  Rb2:
-    C6: 32527460.051647928
-    # 4691(23)(au) from High-precision calculations of van der Waals coefficients
-    # for heteronuclear alkali-metal dimers https://doi.org/10.1103/PhysRevA.63.052704
-  K2:
-    C6: 27021852.871727135
+    C6: 4274
+    De: 4217.815
+  KCs:
+    C6: 5159
+    De: 4069.208
+  KFr:
+    C6: 4500
+  RbRb:
+    C6: 4691
+    De: 3993.47
+  RbCs:
+    C6: 5663
+    De: 3836.14
+  RbFr:
+    C6: 4946
+  CsCs:
+    C6: 6851
+    De: 3649.695
+  CsFr:
+    C6: 5968
+  FrFr:
+    C6: 5256
