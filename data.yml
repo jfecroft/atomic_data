@@ -2,12 +2,34 @@
 # https://physics.nist.gov/PhysRefData/Handbook/periodictable.htm
 # mass in amu
 Atoms:
-  K40:
-    mass: 39.963999
-  K41:
-    mass: 40.961825
-  Rb87:
-    mass: 86.909187
+  Li:
+    6:
+      mass: 6.015121
+    7:
+      mass: 7.016003 
+  Na:
+    23:
+      mass: 22.989767
+  K:
+    39:
+      mass: 38.963707
+    40:
+      mass: 39.963999
+    41:
+      mass: 40.961825
+  Rb:
+    85:
+      mass: 84.911794
+    87:
+      mass: 86.909187
+  Cs:
+    133:
+      mass: 132.905429
+  Fr:
+    212:
+      mass: 211.996130
+    223:
+      mass: 223.019733
 # C6 in au
 # C6 taken from "High-precision calculations of van der Waals coefficients"
 # for heteronuclear alkali-metal dimers https://doi.org/10.1103/PhysRevA.63.052704
