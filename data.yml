@@ -6,7 +6,7 @@ Atoms:
     6:
       mass: 6.015121
     7:
-      mass: 7.016003 
+      mass: 7.016003
   Na:
     23:
       mass: 22.989767
@@ -97,3 +97,30 @@ Molecules:
     C6: 5968
   FrFr:
     C6: 5256
+MoleculeMolecule:
+#  for collsions of the type AB + AB
+#
+# C6 in au
+# C6 taken from "van der Waals coefficients for systems with ultracold polar
+# alkali-metal molecules"
+# https://doi.org/10.1103/PhysRevA.87.022706
+  LiNa:
+    C6: 3709
+  LiK:
+    C6: 411682
+  LiRb:
+    C6: 884705
+  LiCs:
+    C6: 3409406
+  NaK:
+    C6: 516606
+  NaRb:
+    C6: 1507089
+  NaCs:
+    C6: 6946696
+  KRb:
+    C6: 17720
+  KCs:
+    C6: 469120
+  RbCs:
+    C6: 18082
