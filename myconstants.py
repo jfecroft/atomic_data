@@ -2,17 +2,32 @@
 for useful constants such as masses etc
 """
 from scipy.constants import hbar, physical_constants, angstrom
-from math import sqrt
+from math import sqrt,  pi, gamma
 import yaml
 
 TOL = 1.0e-5
 
 bohrradius2angstrom = physical_constants["Bohr radius"][0]/angstrom
+angstrom2bohr = 1/bohrradius2angstrom
 kelvin2wavenumbers = physical_constants["kelvin-inverse meter relationship"][0]/100.0
-
+kelvin2hartree = physical_constants["kelvin-hartree relationship"][0]
+au2wavenumbers = physical_constants["hartree-inverse meter relationship"][0]/100.0
+au2angstrom = physical_constants["Bohr radius"][0]/angstrom
+au2kelvin = physical_constants["hartree-kelvin relationship"][0]
 
 with open('data.yml') as f:
     DATA = yaml.load(f, Loader=yaml.FullLoader)
+
+
+# convert C6 to KAng^6
+for i in DATA["Molecules"]:
+    DATA["Molecules"][i]["C6"] *= au2kelvin
+    DATA["Molecules"][i]["C6"] *= au2angstrom**6
+
+# convert C6 to KAng^6
+for i in DATA["MoleculeMolecule"]:
+    DATA["MoleculeMolecule"][i]["C6"] *= au2kelvin
+    DATA["MoleculeMolecule"][i]["C6"] *= au2angstrom**6
 
 
 def get_bfct():
@@ -23,20 +38,31 @@ def get_bfct():
 
     returns a value 24.25437532030504
     """
-    bfct = hbar**2
+    bfct = hbar**2/2.0
     bfct *= physical_constants["joule-kelvin relationship"][0]
     # bfct *= physical_constants["joule-inverse meter relationship"][0]/100.0
     bfct *= physical_constants["kilogram-atomic mass unit relationship"][0]
     bfct /= angstrom**2
-    bfct /= 2
     return bfct
 
 
 BFCT = get_bfct()
 
+# for defintions see
+# Feshbach resonances in ultracold gases
+
+# Cheng Chin, Rudolf Grimm, Paul Julienne, and Eite Tiesinga
+# Rev. Mod. Phys. 82, 1225 - Published 29 April 2010
+# https://doi.org/10.1103/RevModPhys.82.1225
+
 
 def vdw_length(C6, mu):
-    return pow(mu*C6/BFCT, 1.0/4)
+    """
+    note some people define this without the 0.5
+    but you need the extra factor of a half to get the correct value for
+    the mean scattering length
+    """
+    return 0.5*pow(mu*C6/BFCT, 1.0/4)
 
 
 def vdw_energy(C6, mu):
