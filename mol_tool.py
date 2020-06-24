@@ -10,23 +10,7 @@ Options:
   --version     Show version.
 """
 from docopt import docopt
-from myconstants import DATA, red_mass, vdw_length, vdw_energy, get_abar
-
-class MolMol:
-    def __init__(self, a1, i1, a2, i2):
-        self.a1 = a1
-        self.a2 = a2
-        self.i1 = int(i1)
-        self.i2 = int(i2)
-        self.mol = a1+a2
-        self.mass1 = DATA["Atoms"][self.a1][self.i1]["mass"]
-        self.mass2 = DATA["Atoms"][self.a2][self.i2]["mass"]
-        self.mass = self.mass1 + self.mass2
-        self.C6 = DATA["MoleculeMolecule"][self.mol]["C6"]
-        self.mu = red_mass(self.mass, self.mass)
-        self.l_vdw = vdw_length(self.C6, self.mu)
-        self.e_vdw = vdw_energy(self.C6, self.mu)
-        self.abar = get_abar(self.C6, self.mu)
+from myconstants import MolMol
 
 
 if __name__ == '__main__':
