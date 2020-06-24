@@ -100,7 +100,6 @@ class MolMol:
         self.abar = get_abar(self.C6, self.mu)
 
 
-
 if __name__ == "__main__":
     import pdb
     pdb.set_trace()
